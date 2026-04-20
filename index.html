@@ -3,6 +3,15 @@
 <html class="dark" lang="de">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W87P1Z4F6X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-W87P1Z4F6X');
+    </script>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Capital Council | Institutional Krypto Strategy</title>
@@ -6166,33 +6175,7 @@
 
     <script>
         // Analytics & Cookie Consent Logic
-        // TODO: Ersetzen Sie 'G-XXXXXXXXXX' mit Ihrer echten Google Analytics Measurement ID
         const GA_MEASUREMENT_ID = 'G-W87P1Z4F6X';
-
-        function loadAnalytics() {
-            if (window.dataLayer || GA_MEASUREMENT_ID === 'G-W87P1Z4F6X') {
-                if (GA_MEASUREMENT_ID === 'G-W87P1Z4F6X') {
-                    console.warn('Analytics: Bitte setzen Sie eine gültige GA_MEASUREMENT_ID ein.');
-                }
-                return;
-            }
-
-            const script = document.createElement('script');
-            script.async = true;
-            script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-            document.head.appendChild(script);
-
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            window.gtag = gtag;
-            gtag('js', new Date());
-            gtag('config', GA_MEASUREMENT_ID, {
-                'anonymize_ip': true,
-                'cookie_flags': 'SameSite=None;Secure'
-            });
-
-            console.log('Analytics loaded');
-        }
 
         function trackEvent(name, params = {}) {
             if (window.gtag) {

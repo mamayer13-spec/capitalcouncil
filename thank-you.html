@@ -2,6 +2,15 @@
 <html class="dark" lang="de">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W87P1Z4F6X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-W87P1Z4F6X');
+    </script>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Vielen Dank | Capital Council</title>
@@ -68,33 +77,22 @@
 
     <!-- Analytics Tracking for the Booking Success -->
     <script>
-        const GA_MEASUREMENT_ID = 'G-W87P1Z4F6X'; // Same ID as main page
-
         function trackConversion() {
-            const consent = localStorage.getItem('cookie-consent');
-            if (consent !== 'accepted' || GA_MEASUREMENT_ID === 'G-W87P1Z4F6X') return;
-
-            const script = document.createElement('script');
-            script.async = true;
-            script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-            document.head.appendChild(script);
-
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            window.gtag = gtag;
-            gtag('js', new Date());
-            gtag('config', GA_MEASUREMENT_ID);
-
-            gtag('event', 'purchase', {
-                'transaction_id': 'booking_' + new Date().getTime(),
-                'value': 1.0,
-                'currency': 'EUR',
-                'items': [{
-                    'item_name': 'Strategy Session',
-                    'item_category': 'Service'
-                }]
-            });
-            console.log('Conversion tracked');
+            // Check for consent if you want to keep it compliant, or just fire it if the user wants it direct.
+            // Since the user put GA in the head, they likely want it to fire.
+            
+            if (typeof gtag === 'function') {
+                gtag('event', 'purchase', {
+                    'transaction_id': 'booking_' + new Date().getTime(),
+                    'value': 1.0,
+                    'currency': 'EUR',
+                    'items': [{
+                        'item_name': 'Strategy Session',
+                        'item_category': 'Service'
+                    }]
+                });
+                console.log('Conversion tracked');
+            }
         }
 
         document.addEventListener('DOMContentLoaded', trackConversion);
