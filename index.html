@@ -273,16 +273,45 @@
             transform: translateY(0);
         }
 
-        .delay-100 { transition-delay: 100ms; }
-        .delay-200 { transition-delay: 200ms; }
-        .delay-300 { transition-delay: 300ms; }
-        .delay-400 { transition-delay: 400ms; }
-        .delay-500 { transition-delay: 500ms; }
-        .delay-600 { transition-delay: 600ms; }
-        .delay-700 { transition-delay: 700ms; }
-        .delay-800 { transition-delay: 800ms; }
-        .delay-900 { transition-delay: 900ms; }
-        .delay-1000 { transition-delay: 1000ms; }
+        .delay-100 {
+            transition-delay: 100ms;
+        }
+
+        .delay-200 {
+            transition-delay: 200ms;
+        }
+
+        .delay-300 {
+            transition-delay: 300ms;
+        }
+
+        .delay-400 {
+            transition-delay: 400ms;
+        }
+
+        .delay-500 {
+            transition-delay: 500ms;
+        }
+
+        .delay-600 {
+            transition-delay: 600ms;
+        }
+
+        .delay-700 {
+            transition-delay: 700ms;
+        }
+
+        .delay-800 {
+            transition-delay: 800ms;
+        }
+
+        .delay-900 {
+            transition-delay: 900ms;
+        }
+
+        .delay-1000 {
+            transition-delay: 1000ms;
+        }
 
         /* Zielgruppe: drei überlappende Fotos mit Schatten & sanfter Animation */
         .audience-photo-stack {
@@ -5963,7 +5992,6 @@
                 <a class="hover:text-slate-200 transition-colors" href="agb.html">AGB</a>
                 <a class="hover:text-slate-200 transition-colors" href="datenschutz.html">Datenschutzerklärung</a>
                 <a class="hover:text-slate-200 transition-colors" href="haftungsausschluss.html">Haftungsausschluss</a>
-                <a class="hover:text-slate-200 transition-colors cursor-pointer" onclick="localStorage.removeItem('cookie-consent'); location.reload();">Cookie-Einstellungen</a>
             </div>
         </div>
     </footer>
@@ -6067,6 +6095,16 @@
             const answer = item.querySelector('.faq-answer');
             const isOpen = item.classList.contains('is-expanded');
 
+            // Close all other items
+            if (!isOpen) {
+                document.querySelectorAll('.faq-item.is-expanded').forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('is-expanded');
+                        otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                    }
+                });
+            }
+
             if (isOpen) {
                 item.classList.remove('is-expanded');
                 answer.style.maxHeight = null;
@@ -6096,7 +6134,8 @@
         });
     </script>
     <!-- Cookie Banner -->
-    <div id="cookie-banner" class="fixed bottom-6 left-6 right-6 md:left-auto md:right-8 md:max-w-md z-[100] transform translate-y-full opacity-0 transition-all duration-700 ease-out">
+    <div id="cookie-banner"
+        class="fixed bottom-6 left-6 right-6 md:left-auto md:right-8 md:max-w-md z-[100] transform translate-y-full opacity-0 transition-all duration-700 ease-out">
         <div class="glass-card p-6 rounded-2xl border border-primary/20 shadow-2xl overflow-hidden relative">
             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-primary-container"></div>
             <div class="flex items-start gap-4">
@@ -6106,14 +6145,19 @@
                 <div>
                     <h4 class="text-on-surface font-bold mb-2 font-headline">Datenschutz & Cookies</h4>
                     <p class="text-sm text-on-surface-variant leading-relaxed mb-4">
-                        Wir nutzen Cookies, um unsere Website zu analysieren und Ihr Erlebnis zu verbessern. Mit Ihrer Zustimmung helfen Sie uns, unser Angebot weiter zu optimieren.
+                        Wir nutzen Cookies, um unsere Website zu analysieren und Ihr Erlebnis zu verbessern. Mit Ihrer
+                        Zustimmung helfen Sie uns, unser Angebot weiter zu optimieren.
                     </p>
                     <div class="flex flex-wrap gap-3">
-                        <button id="accept-cookies" class="gradient-button px-6 py-2 rounded-xl text-xs font-bold uppercase tracking-wider cursor-pointer">Alle akzeptieren</button>
-                        <button id="reject-cookies" class="px-6 py-2 rounded-xl text-xs font-bold uppercase tracking-wider border border-outline-variant/30 text-on-surface hover:bg-surface-container-low transition-all cursor-pointer">Ablehnen</button>
+                        <button id="accept-cookies"
+                            class="gradient-button px-6 py-2 rounded-xl text-xs font-bold uppercase tracking-wider cursor-pointer">Alle
+                            akzeptieren</button>
+                        <button id="reject-cookies"
+                            class="px-6 py-2 rounded-xl text-xs font-bold uppercase tracking-wider border border-outline-variant/30 text-on-surface hover:bg-surface-container-low transition-all cursor-pointer">Ablehnen</button>
                     </div>
                     <p class="text-[10px] text-slate-500 mt-4">
-                        Mehr Infos in unserer <a href="datenschutz.html" class="underline hover:text-primary">Datenschutzerklärung</a>.
+                        Mehr Infos in unserer <a href="datenschutz.html"
+                            class="underline hover:text-primary">Datenschutzerklärung</a>.
                     </p>
                 </div>
             </div>
@@ -6123,11 +6167,11 @@
     <script>
         // Analytics & Cookie Consent Logic
         // TODO: Ersetzen Sie 'G-XXXXXXXXXX' mit Ihrer echten Google Analytics Measurement ID
-        const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; 
+        const GA_MEASUREMENT_ID = 'G-W87P1Z4F6X';
 
         function loadAnalytics() {
-            if (window.dataLayer || GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') {
-                if (GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') {
+            if (window.dataLayer || GA_MEASUREMENT_ID === 'G-W87P1Z4F6X') {
+                if (GA_MEASUREMENT_ID === 'G-W87P1Z4F6X') {
                     console.warn('Analytics: Bitte setzen Sie eine gültige GA_MEASUREMENT_ID ein.');
                 }
                 return;
@@ -6139,7 +6183,7 @@
             document.head.appendChild(script);
 
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
+            function gtag() { dataLayer.push(arguments); }
             window.gtag = gtag;
             gtag('js', new Date());
             gtag('config', GA_MEASUREMENT_ID, {

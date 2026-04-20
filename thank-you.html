@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html class="dark" lang="de">
+
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Vielen Dank | Capital Council</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
     <style>
         body {
             background-color: #071326;
@@ -18,6 +22,7 @@
             justify-content: center;
             min-height: 100vh;
         }
+
         .glass-card {
             background: rgba(20, 32, 51, 0.4);
             backdrop-filter: blur(12px);
@@ -25,23 +30,26 @@
             border: 1px solid rgba(141, 144, 161, 0.1);
             box-shadow: 0 0 40px rgba(29, 100, 242, 0.2);
         }
+
         .gradient-button {
             background: linear-gradient(135deg, #1D64F2 0%, #0047AB 100%);
             color: white !important;
             box-shadow: 0 10px 25px -5px rgba(29, 100, 242, 0.4);
             transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
+
         .gradient-button:hover {
             transform: translateY(-4px) scale(1.03);
             box-shadow: 0 20px 35px -5px rgba(29, 100, 242, 0.5);
         }
     </style>
 </head>
+
 <body>
     <div class="max-w-2xl w-full px-6 text-center">
         <div class="glass-card p-12 rounded-3xl relative overflow-hidden">
             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-primary-container"></div>
-            
+
             <div class="mb-8 flex justify-center">
                 <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center animate-bounce">
                     <span class="material-symbols-outlined text-4xl text-primary">check_circle</span>
@@ -50,22 +58,21 @@
 
             <h1 class="text-4xl md:text-5xl font-bold font-headline mb-6 tracking-tight">Termin bestätigt!</h1>
             <p class="text-lg text-on-surface-variant mb-10 leading-relaxed">
-                Vielen Dank für Ihre Buchung. Wir haben Ihren Termin erhalten und freuen uns auf unser gemeinsames Strategie-Gespräch. Eine Bestätigung wurde an Ihre E-Mail-Adresse gesendet.
+                Vielen Dank für Ihre Buchung. Wir haben Ihren Termin erhalten und freuen uns auf unser gemeinsames
+                Strategie-Gespräch. Eine Bestätigung wurde an Ihre E-Mail-Adresse gesendet.
             </p>
 
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="code.html" class="gradient-button px-8 py-4 rounded-xl text-lg font-bold">Zur Startseite</a>
-            </div>
+
         </div>
     </div>
 
     <!-- Analytics Tracking for the Booking Success -->
     <script>
-        const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // Same ID as main page
+        const GA_MEASUREMENT_ID = 'G-W87P1Z4F6X'; // Same ID as main page
 
         function trackConversion() {
             const consent = localStorage.getItem('cookie-consent');
-            if (consent !== 'accepted' || GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') return;
+            if (consent !== 'accepted' || GA_MEASUREMENT_ID === 'G-W87P1Z4F6X') return;
 
             const script = document.createElement('script');
             script.async = true;
@@ -73,11 +80,11 @@
             document.head.appendChild(script);
 
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
+            function gtag() { dataLayer.push(arguments); }
             window.gtag = gtag;
             gtag('js', new Date());
             gtag('config', GA_MEASUREMENT_ID);
-            
+
             gtag('event', 'purchase', {
                 'transaction_id': 'booking_' + new Date().getTime(),
                 'value': 1.0,
@@ -93,4 +100,5 @@
         document.addEventListener('DOMContentLoaded', trackConversion);
     </script>
 </body>
+
 </html>
