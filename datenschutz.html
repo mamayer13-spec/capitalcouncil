@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html class="dark" lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Datenschutzerklärung | Capital Council</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface": "#071326",
+                        "primary": "#b3c5ff",
+                        "primary-container": "#1d64f2",
+                        "on-surface": "#d7e3fe",
+                        "on-surface-variant": "#c3c6d8",
+                        "outline-variant": "#424655",
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #071326;
+            color: #d7e3fe;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .glass-card {
+            background: rgba(30, 42, 62, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(66, 70, 85, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(179, 197, 255, 0.3);
+            background: rgba(30, 42, 62, 0.5);
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #b3c5ff;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            color: #d7e3fe;
+            transform: translateX(-4px);
+        }
+
+        .premium-border {
+            position: relative;
+        }
+
+        .premium-border::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #1d64f2;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -0.02em;
+        }
+        
+        .legal-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #b3c5ff;
+            margin-top: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-left: 3px solid #1d64f2;
+            padding-left: 1rem;
+        }
+
+        .legal-content h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .legal-content p {
+            color: #c3c6d8;
+            margin-bottom: 1.25rem;
+            font-weight: 300;
+        }
+
+        .legal-content ul {
+            margin-bottom: 2rem;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .legal-content li {
+            color: #c3c6d8;
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+            font-weight: 300;
+        }
+
+        .legal-content li::before {
+            content: "\e5cc"; /* Material Symbols Chevron Right */
+            font-family: 'Material Symbols Outlined';
+            position: absolute;
+            left: 0;
+            color: #1d64f2;
+            font-size: 1rem;
+            top: 0.2rem;
+        }
+
+        .glow-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% -20%, rgba(29, 100, 242, 0.15), transparent 70%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .info-box {
+            background: rgba(29, 100, 242, 0.05);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            border: 1px solid rgba(29, 100, 242, 0.2);
+            margin-bottom: 3rem;
+        }
+    </style>
+</head>
+
+<body class="selection:bg-primary/30">
+    <div class="glow-bg"></div>
+    
+    <div class="max-w-4xl mx-auto px-6 py-20 md:py-32">
+        <header class="mb-16">
+            <a href="code.html" class="back-button mb-12">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Zurück zur Startseite
+            </a>
+            <h1 class="text-5xl md:text-6xl font-bold tracking-tighter text-white premium-border pb-6">Datenschutz</h1>
+        </header>
+
+        <main class="legal-content">
+            <div class="glass-card p-8 md:p-12 rounded-[2rem]">
+                <h2>1. Datenschutz auf einen Blick</h2>
+                
+                <h3>Allgemeine Hinweise</h3>
+                <p>
+                    Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit deinen personenbezogenen Daten passiert, wenn du meine Website besuchst. Personenbezogene Daten sind alle Daten, mit denen du persönlich identifiziert werden kannst.
+                </p>
+
+                <h3>Datenerfassung auf meiner Website</h3>
+                <p>
+                    Ich erhebe auf dieser Website verschiedene Daten, um mein Coaching-Angebot optimal auf dich abzustimmen und eine reibungslose Nutzung der Seite zu ermöglichen.
+                </p>
+                
+                <h3>Welche Daten erfasse ich?</h3>
+                <ul>
+                    <li>Name und E-Mail-Adresse</li>
+                    <li>Telefonnummer</li>
+                    <li>Alter und Beruf</li>
+                    <li>Website (falls vorhanden)</li>
+                    <li>Konsumverhalten und aktuelle Zufriedenheit</li>
+                    <li>Gewünschtes Einkommen</li>
+                    <li>Bereitschaft zur Investition von Zeit und Geld</li>
+                </ul>
+                <p>
+                    Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten dienen der Analyse deines Nutzerverhaltens oder der Vorbereitung unserer Zusammenarbeit.
+                </p>
+
+                <h2>2. Verantwortliche Stelle</h2>
+                <div class="info-box">
+                    <p class="mb-0 text-white font-medium">
+                        28 Scalez Solutions LLC<br>
+                        30 N Gould St Ste R<br>
+                        Sheridan, WY 82801<br>
+                        USA<br><br>
+                        Vertreten durch: Claudio Fuersatz<br>
+                        E-Mail: <a href="mailto:ScalezSolutions@gmail.com" class="text-primary hover:underline transition-colors">ScalezSolutions@gmail.com</a>
+                    </p>
+                </div>
+
+                <h2>3. Deine Rechte</h2>
+                <p>Du hast jederzeit das Recht:</p>
+                <ul>
+                    <li>Unentgeltlich Auskunft über deine gespeicherten personenbezogenen Daten zu erhalten.</li>
+                    <li>Die Berichtigung, Sperrung oder Löschung deiner Daten zu verlangen.</li>
+                    <li>Deine Einwilligung zur Datenverarbeitung jederzeit zu widerrufen.</li>
+                    <li>Dich bei der zuständigen Aufsichtsbehörde zu beschweren.</li>
+                </ul>
+
+                <h2>4. Datenerfassung und Technik</h2>
+                
+                <h3>Cookies</h3>
+                <p>
+                    Meine Website verwendet teilweise so genannte Cookies. Diese richten auf deinem Rechner keinen Schaden an und dienen dazu, mein Angebot nutzerfreundlicher und effektiver zu machen. Du kannst deinen Browser so einstellen, dass du über das Setzen von Cookies informiert wirst.
+                </p>
+
+                <h3>Server-Log-Dateien</h3>
+                <p>
+                    Der Provider der Seiten erhebt und speichert automatisch Informationen in Server-Log-Dateien, die dein Browser automatisch an mich übermittelt (z. B. Browsertyp, IP-Adresse, Uhrzeit der Anfrage).
+                </p>
+
+                <h3>Analyse-Tools</h3>
+                <p>
+                    <strong>Google Analytics:</strong> Ich nutze diesen Dienst der Google Ireland Limited zur Analyse der Website-Benutzung.
+                </p>
+                <p>
+                    <strong>Facebook Pixel:</strong> Zur Konversionsmessung und für Marketing-Zwecke nutze ich das Besucheraktions-Pixel der Facebook Ireland Ltd.
+                </p>
+
+                <h2>5. Newsletter</h2>
+                <p>
+                    Wenn du meinen Newsletter abonnierst, verwende ich deine E-Mail-Adresse für eigene Werbezwecke. Du kannst dich jederzeit über den Link im Newsletter oder per E-Mail an mich wieder abmelden.
+                </p>
+
+                <h2>6. Rechtsgrundlage</h2>
+                <p>
+                    Die Verarbeitung deiner Daten erfolgt auf Grundlage von Art. 6 DSGVO. Ich verarbeite diese Daten primär für Coaching-Zwecke, zur persönlichen Kontaktaufnahme und um dir die bestmöglichen Strategien für deinen Erfolg im Trading-Bereich anzubieten.
+                </p>
+            </div>
+        </main>
+
+        <footer class="mt-20 pt-10 border-t border-outline-variant/30 text-center">
+            <p class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant/50">© 2026 Capital Council. Institutional Strategy for the Sovereign.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

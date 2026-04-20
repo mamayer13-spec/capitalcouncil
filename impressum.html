@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html class="dark" lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Impressum | Capital Council</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface": "#071326",
+                        "primary": "#b3c5ff",
+                        "primary-container": "#1d64f2",
+                        "on-surface": "#d7e3fe",
+                        "on-surface-variant": "#c3c6d8",
+                        "outline-variant": "#424655",
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #071326;
+            color: #d7e3fe;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .glass-card {
+            background: rgba(30, 42, 62, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(66, 70, 85, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(179, 197, 255, 0.3);
+            background: rgba(30, 42, 62, 0.5);
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #b3c5ff;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            color: #d7e3fe;
+            transform: translateX(-4px);
+        }
+
+        .premium-border {
+            position: relative;
+        }
+
+        .premium-border::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #1d64f2;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Space Grotesk', sans-serif !important;
+            letter-spacing: -0.02em;
+        }
+        
+        .legal-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #b3c5ff;
+            margin-top: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-left: 3px solid #1d64f2;
+            padding-left: 1rem;
+        }
+        
+        .legal-content p {
+            color: #c3c6d8;
+            margin-bottom: 1.25rem;
+            font-weight: 300;
+        }
+
+        .legal-content hr {
+            border: 0;
+            border-top: 1px solid rgba(66, 70, 85, 0.3);
+            margin: 3rem 0;
+        }
+
+        .glow-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% -20%, rgba(29, 100, 242, 0.15), transparent 70%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .address-box {
+            background: rgba(29, 100, 242, 0.05);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            border: 1px solid rgba(29, 100, 242, 0.2);
+            margin-bottom: 3rem;
+        }
+    </style>
+</head>
+
+<body class="selection:bg-primary/30">
+    <div class="glow-bg"></div>
+    
+    <div class="max-w-4xl mx-auto px-6 py-20 md:py-32">
+        <header class="mb-16">
+            <a href="code.html" class="back-button mb-12">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Zurück zur Startseite
+            </a>
+            <h1 class="text-5xl md:text-6xl font-bold tracking-tighter text-white premium-border pb-6 font-headline">Impressum</h1>
+        </header>
+
+        <main class="legal-content">
+            <div class="glass-card p-8 md:p-12 rounded-[2rem]">
+                <h2 class="font-headline">Angaben gemäß § 5 TMG</h2>
+                <div class="address-box">
+                    <p class="text-white text-lg font-medium mb-0">
+                        28 Scalez Solutions LLC<br>
+                        30 N Gould St Ste R<br>
+                        Sheridan, WY 82801<br>
+                        USA
+                    </p>
+                </div>
+
+                <h2 class="font-headline">Kontakt</h2>
+                <p>
+                    E-Mail: <a href="mailto:ScalezSolutions@gmail.com" class="text-primary hover:underline transition-colors font-medium">ScalezSolutions@gmail.com</a>
+                </p>
+
+                <h2 class="font-headline">Vertreten durch</h2>
+                <p class="text-white">Claudio Fuersatz (Managing Member)</p>
+
+                <hr>
+
+                <h2 class="font-headline">Streitschlichtung</h2>
+                <p>
+                    Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+                </p>
+
+                <h2 class="font-headline">Haftung für Inhalte</h2>
+                <p>
+                    Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht unter der Verpflichtung, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+                </p>
+                <p>
+                    Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
+                </p>
+
+                <h2 class="font-headline">Haftung für Links</h2>
+                <p>
+                    Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+                </p>
+                <p>
+                    Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
+                </p>
+
+                <h2 class="font-headline">Urheberrecht</h2>
+                <p>
+                    Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+                </p>
+                <p>
+                    Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
+                </p>
+            </div>
+        </main>
+
+        <footer class="mt-20 pt-10 border-t border-outline-variant/30 text-center">
+            <p class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant/50">© 2026 Capital Council. Institutional Strategy for the Sovereign.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
