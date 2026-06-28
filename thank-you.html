@@ -43,15 +43,6 @@
             pointer-events: none;
         }
 
-        body::after {
-            content: '';
-            position: fixed;
-            inset: 0;
-            z-index: -1;
-            background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(29, 100, 242, 0.12), transparent 60%);
-            pointer-events: none;
-        }
-
         .glass-card {
             background: rgba(20, 32, 51, 0.4);
             backdrop-filter: blur(12px);
@@ -102,6 +93,10 @@
     </style>
 </head>
 <body>
+    <div class="fixed inset-0 z-[-1] pointer-events-none">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-container rounded-full blur-[120px] opacity-20"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-surface-tint rounded-full blur-[150px] opacity-20"></div>
+    </div>
     <main class="relative w-full flex items-center justify-center px-6 py-16">
         <div class="max-w-lg w-full text-center space-y-8 relative z-10">
 
