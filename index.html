@@ -6220,11 +6220,11 @@
         function initCtaTracking() {
             document.querySelectorAll('a').forEach(link => {
                 // Prüfen ob der Link ein Calendly Link ist oder den Text enthält
-                if (link.textContent.trim().includes('Gespräch vereinbaren') || link.href.includes('calendly.com')) {
+                if (link.textContent.trim().includes('Kostenloser Videokurs') || link.href.includes('/form.html')) {
                     link.addEventListener('click', (e) => {
                         trackEvent('cta_click', {
                             event_category: 'engagement',
-                            event_label: 'Gespräch vereinbaren',
+                            event_label: link.closest('section') ? (link.closest('section').id || 'hero') : 'nav',
                             location: link.closest('section') ? (link.closest('section').id || 'section') : 'header',
                             destination: link.href
                         });
