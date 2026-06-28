@@ -95,6 +95,22 @@
             .radar-pulse {
                 animation: radar 1.8s ease-out infinite;
             }
+            .faq-answer {
+              max-height: 0;
+              overflow: hidden;
+              transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+              opacity: 0;
+            }
+            .faq-item.is-expanded .faq-answer {
+              max-height: 500px;
+              opacity: 1;
+            }
+            .faq-item.is-expanded .material-symbols-outlined {
+              transform: rotate(45deg);
+            }
+            .material-symbols-outlined {
+              transition: transform 0.3s ease;
+            }
               body {
                   background-color: #071326;
                   color: #d7e3fe;
@@ -160,6 +176,13 @@
     }
   </style>
 </span> <span class="text-primary italic">aufbaust</span>, <span class="text-primary italic">skalierst</span> und im richtigen Moment <span class="text-primary italic">verkaufst</span>.</h1>
+
+      <div class="flex flex-wrap justify-center gap-3 mt-4 mb-2">
+  <span class="text-xs font-medium px-4 py-1.5 rounded-full border border-primary/30 text-primary/70">Kein Vorwissen nötig</span>
+  <span class="text-xs font-medium px-4 py-1.5 rounded-full border border-primary/30 text-primary/70">Komplett kostenlos</span>
+  <span class="text-xs font-medium px-4 py-1.5 rounded-full border border-primary/30 text-primary/70">Nur 2 Stunden deiner Zeit</span>
+</div>
+      
 <p class="font-body text-base sm:text-lg md:text-2xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed opacity-90">
   Die meisten Leute kaufen irgendwas, hoffen das Beste und verkaufen im falschen Moment. Ich zeige dir wie ich das anders mache.
 </p>
@@ -168,11 +191,14 @@
 <!-- Button oberhalb der Card -->
 <div class="flex justify-center w-full max-w-2xl mb-6">
   <button class="cta-glow radar-pulse ml-onclick-form w-full md:w-auto px-16 py-6 bg-primary-container text-white font-headline font-bold text-xl rounded-xl transition-all duration-300 hover:scale-105 active:scale-95" onclick="gtag('event', 'cta_click', {'event_category': 'engagement', 'event_label': 'form_popup_open'}); ml('show', '2xKWOz', true)">Jetzt kostenlosen Kurs sichern</button>
+  <p class="text-xs text-on-surface-variant opacity-50 mt-3 text-center border border-on-surface-variant/20 rounded-full px-4 py-1.5 inline-block">Kostenlos · Keine Kreditkarte · Kein Abo</p>    
+  
+  <p class="text-xs text-on-surface-variant opacity-40 mt-2 text-center">Nur für begrenzte Zeit kostenlos verfügbar</p>
 </div>
 
 <!-- Glassmorphism Bullet Card -->
 <div class="glass-card p-6 md:p-12 rounded-2xl w-full max-w-2xl relative z-10 transition-all duration-500 hover:scale-[1.01]">
-  <p class="font-headline text-base font-semibold text-primary uppercase tracking-widest mb-8">In diesem kostenlosen Videokurs lernst du</p>
+  <p class="font-headline text-base font-semibold text-primary uppercase tracking-widest mb-8">In 10 Lektionen lernst du</p>
   <div class="space-y-8">
     <div class="flex items-start gap-5">
       <div class="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center flex-shrink-0 mt-1">
@@ -180,7 +206,7 @@
       </div>
       <div class="flex-1">
         <p class="font-body text-on-surface text-base md:text-lg font-medium leading-tight">
-          Wie du ein Portfolio aufbaust das auch in schlechten Märkten standhält
+          Welche großen Trends die nächsten Jahre den Markt bestimmen und welche Aktien davon am meisten profitieren
         </p>
       </div>
     </div>
@@ -190,7 +216,7 @@
       </div>
       <div class="flex-1">
         <p class="font-body text-on-surface text-base md:text-lg font-medium leading-tight">
-          Wann der richtige Zeitpunkt ist einzusteigen — und wann nicht
+          Wie du erkennst ob eine Aktie wirklich gut ist, mit einem einfachen 5-Punkte-Check den jeder anwenden kann
         </p>
       </div>
     </div>
@@ -200,9 +226,52 @@
       </div>
       <div class="flex-1">
         <p class="font-body text-on-surface text-base md:text-lg font-medium leading-tight">
-          Warum die meisten Leute Gewinne liegen lassen und wie du das vermeidest
+          WWie du dein Geld so aufteilst, dass du auch in schlechten Marktphasen ruhig schlafen kannst
         </p>
       </div>
+    </div>
+  </div>
+</div>
+<div class="w-full max-w-2xl mt-8 space-y-4">
+  <p class="font-headline text-base font-semibold text-primary uppercase tracking-widest mb-6">Häufige Fragen</p>
+
+  <div class="faq-item p-5 glass-card rounded-2xl border border-outline-variant/10">
+    <button class="w-full text-base font-bold flex justify-between items-center cursor-pointer text-left outline-none" onclick="toggleFaq(this)">
+      Ist das wirklich kostenlos?
+      <span class="material-symbols-outlined text-primary text-sm">add</span>
+    </button>
+    <div class="faq-answer text-sm text-on-surface-variant leading-relaxed">
+      <div class="pt-4">Ja, komplett. Du gibst deinen Namen, deine Email und Telefonnummer ein und bekommst danach einen Link zugeschickt. Beim ersten Öffnen wirst du gebeten einen kostenlosen Account zu erstellen — das dauert 30 Sekunden und kostet nichts. Dann hast du sofort Zugang zu allen 10 Videos.</div>
+    </div>
+  </div>
+
+  <div class="faq-item p-5 glass-card rounded-2xl border border-outline-variant/10">
+    <button class="w-full text-base font-bold flex justify-between items-center cursor-pointer text-left outline-none" onclick="toggleFaq(this)">
+      Ich habe null Ahnung von Aktien. Ist das trotzdem für mich?
+      <span class="material-symbols-outlined text-primary text-sm">add</span>
+    </button>
+    <div class="faq-answer text-sm text-on-surface-variant leading-relaxed">
+      <div class="pt-4">Egal ob du noch nie eine Aktie gekauft hast oder schon aktiv investierst — Claudio erklärt alles in einer Sprache die jeder versteht, geht aber tief genug rein dass auch erfahrene Investoren etwas mitnehmen.</div>
+    </div>
+  </div>
+
+  <div class="faq-item p-5 glass-card rounded-2xl border border-outline-variant/10">
+    <button class="w-full text-base font-bold flex justify-between items-center cursor-pointer text-left outline-none" onclick="toggleFaq(this)">
+      Wie viel Zeit brauche ich dafür?
+      <span class="material-symbols-outlined text-primary text-sm">add</span>
+    </button>
+    <div class="faq-answer text-sm text-on-surface-variant leading-relaxed">
+      <div class="pt-4">Die 10 Videos dauern zusammen ungefähr 2 Stunden. Du kannst dir die Zeit komplett frei einteilen — heute eine Lektion, morgen drei, ganz wie es in deinen Alltag passt.</div>
+    </div>
+  </div>
+
+  <div class="faq-item p-5 glass-card rounded-2xl border border-outline-variant/10">
+    <button class="w-full text-base font-bold flex justify-between items-center cursor-pointer text-left outline-none" onclick="toggleFaq(this)">
+      Was passiert nachdem ich mir den Kurs angeschaut habe?
+      <span class="material-symbols-outlined text-primary text-sm">add</span>
+    </button>
+    <div class="faq-answer text-sm text-on-surface-variant leading-relaxed">
+      <div class="pt-4">Nichts was du nicht selbst willst. Wenn du Fragen hast schreibst du Claudio einfach auf Instagram. Mehr nicht.</div>
     </div>
   </div>
 </div>
@@ -254,6 +323,24 @@
     el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
     observer.observe(el);
   });
+  function toggleFaq(button) {
+  const item = button.closest('.faq-item');
+  const answer = item.querySelector('.faq-answer');
+  const isOpen = item.classList.contains('is-expanded');
+  document.querySelectorAll('.faq-item.is-expanded').forEach(other => {
+    if (other !== item) {
+      other.classList.remove('is-expanded');
+      other.querySelector('.faq-answer').style.maxHeight = null;
+    }
+  });
+  if (isOpen) {
+    item.classList.remove('is-expanded');
+    answer.style.maxHeight = null;
+  } else {
+    item.classList.add('is-expanded');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+  }
+}
 </script>
 
 </body>
