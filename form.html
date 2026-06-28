@@ -139,25 +139,22 @@
   </svg>
   <style>
     @keyframes draw {
-      to {
-        stroke-dashoffset: 0;
-      }
+      to { stroke-dashoffset: 0; }
     }
   </style>
 </span> <span class="text-primary italic">aufbaust</span>, <span class="text-primary italic">skalierst</span> und im richtigen Moment <span class="text-primary italic">verkaufst</span>.</h1>
 <p class="font-body text-base sm:text-lg md:text-2xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed opacity-90">
-                Die meisten Leute kaufen irgendwas, hoffen das Beste und verkaufen im falschen Moment. Ich zeige dir wie ich das anders mache.
-            </p>
+  Die meisten Leute kaufen irgendwas, hoffen das Beste und verkaufen im falschen Moment. Ich zeige dir wie ich das anders mache.
+</p>
+</div>
+
+<!-- Button oberhalb der Card -->
+<div class="flex justify-center w-full max-w-2xl mb-6">
+  <button class="cta-glow ml-onclick-form w-full md:w-auto px-16 py-6 bg-primary-container text-white font-headline font-bold text-xl rounded-xl transition-all duration-300 hover:scale-105 active:scale-95" onclick="ml('show', '2xKWOz', true)">Zum kostenlosen Kurs</button>
 </div>
 
 <!-- Glassmorphism Bullet Card -->
 <div class="glass-card p-6 md:p-12 rounded-2xl w-full max-w-2xl relative z-10 transition-all duration-500 hover:scale-[1.01]">
-
-  <!-- Button OBEN -->
-  <div class="flex justify-center mb-10">
-    <button class="cta-glow ml-onclick-form w-full md:w-auto px-16 py-6 bg-primary-container text-white font-headline font-bold text-xl rounded-xl transition-all duration-300 hover:scale-105 active:scale-95" onclick="ml('show', '2xKWOz', true)">Zum kostenlosen Kurs</button>
-  </div>
-
   <div class="space-y-8">
     <div class="flex items-start gap-5">
       <div class="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center flex-shrink-0 mt-1">
@@ -214,32 +211,32 @@
 </footer>
 
 <script>
-        document.addEventListener('mousemove', (e) => {
-            const cards = document.querySelectorAll('.glass-card');
-            cards.forEach(card => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                card.style.setProperty('--mouse-x', `${x}px`);
-                card.style.setProperty('--mouse-y', `${y}px`);
-            });
-        });
+  document.addEventListener('mousemove', (e) => {
+    const cards = document.querySelectorAll('.glass-card');
+    cards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
 
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('opacity-100', 'translate-y-0');
-                    entry.target.classList.remove('opacity-0', 'translate-y-10');
-                }
-            });
-        }, observerOptions);
+  const observerOptions = { threshold: 0.1 };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('opacity-100', 'translate-y-0');
+        entry.target.classList.remove('opacity-0', 'translate-y-10');
+      }
+    });
+  }, observerOptions);
 
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
-            observer.observe(el);
-        });
-    </script>
+  document.querySelectorAll('.animate-on-scroll').forEach(el => {
+    el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+    observer.observe(el);
+  });
+</script>
 
 </body>
-</html>s
+</html>
