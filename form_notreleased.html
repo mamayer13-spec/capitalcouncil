@@ -184,6 +184,16 @@
       ml("account", "2457127");
     </script>
     <!-- End MailerLite Universal -->
+    <script src="//embed.typeform.com/next/embed.js"></script>
+    <script>
+      document.getElementById('typeform-button').addEventListener('click', function() {
+        gtag('event', 'cta_click', {
+          event_category: 'engagement',
+          event_label: 'form_popup_open',
+        });
+        window.tf.createPopup('01KWCA6TY1V0SVA1RCZSWJ0TA2').open();
+      });
+    </script>
   </head>
   <body class="antialiased">
     <!-- Background Elements -->
@@ -247,22 +257,13 @@
 
       <!-- Button oberhalb der Card -->
       <div class="flex flex-col items-center w-full max-w-2xl mb-8 gap-3 mt-6">
-        <!-- <button
-          data-tf-live="01KWCA6TY1V0SVA1RCZSWJ0TA2"
-          data-tf-popup="true"
-          data-tf-iframe-props="title=Capital Council"
-          data-tf-transitive-search-params
+        <button
+          id="typeform-button"
           class="gradient-button radar-pulse w-full md:w-auto px-16 py-6 text-white font-headline font-bold text-xl rounded-2xl transition-all duration-300 hover:scale-105 active:scale-95"
-          onclick="
-            gtag('event', 'cta_click', {
-              event_category: 'engagement',
-              event_label: 'form_popup_open',
-            });
-          "
         >
           Jetzt kostenlosen Kurs sichern
-        </button> -->
-        <div data-tf-live="01KWCA6TY1V0SVA1RCZSWJ0TA2" style="width: 100%; max-width: 600px; min-height: 500px;"></div><script src="//embed.typeform.com/next/embed.js"></script>
+        </button>
+  
         <p
           class="text-xs text-primary/70 text-center border border-primary/30 rounded-full px-4 py-1.5 mt-4"
         >
