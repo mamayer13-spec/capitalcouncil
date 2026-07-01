@@ -159,6 +159,26 @@
         backdrop-filter: blur(20px);
         border: 1px solid rgba(179, 197, 255, 0.1);
       }
+      /* Reveal-Animationen (wie auf der Hauptseite) */
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 1.2s cubic-bezier(0.21, 0.6, 0.35, 1),
+                    transform 1.2s cubic-bezier(0.21, 0.6, 0.35, 1);
+        will-change: transform, opacity;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .delay-100 { transition-delay: 100ms; }
+      .delay-200 { transition-delay: 200ms; }
+      .delay-300 { transition-delay: 300ms; }
+      .delay-400 { transition-delay: 400ms; }
+      .delay-500 { transition-delay: 500ms; }
+      .delay-600 { transition-delay: 600ms; }
+      .delay-700 { transition-delay: 700ms; }
+      .delay-800 { transition-delay: 800ms; }
     </style>
   </head>
   <body class="antialiased">
@@ -176,7 +196,7 @@
     >
       <div class="max-w-4xl w-full text-center mb-4">
         <h1
-          class="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight md:leading-[1.2] tracking-normal md:tracking-tighter text-on-background mb-6 md:mb-8 max-w-3xl mx-auto"
+          class="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight md:leading-[1.2] tracking-normal md:tracking-tighter text-on-background mb-6 md:mb-8 max-w-3xl mx-auto reveal"
         >
           Wie du ein
           <span class="relative inline-block">
@@ -210,20 +230,20 @@
         </h1>
 
         <p
-          class="font-body text-sm sm:text-base md:text-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed opacity-90 mb-4"
+          class="font-body text-sm sm:text-base md:text-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed opacity-90 mb-4 reveal delay-100"
         >
           Die meisten Leute kaufen irgendwas, hoffen das Beste und verkaufen im
           falschen Moment. Ich zeige dir wie ich das anders mache.
         </p>
-        <div class="flex flex-wrap justify-center gap-3 mt-6 mb-6">
+        <div class="flex flex-wrap justify-center gap-3 mt-6 mb-6 reveal delay-200">
           <span class="text-xs sm:text-sm font-medium px-4 sm:px-5 py-1.5 sm:py-2 rounded-full border border-primary/50 text-primary">Kein Vorwissen nötig</span>
           <span class="text-xs sm:text-sm font-medium px-4 sm:px-5 py-1.5 sm:py-2 rounded-full border border-primary/50 text-primary">Komplett kostenlos</span>
         </div>
       </div>
 
-      <div data-tf-live="01KWCA6TY1V0SVA1RCZSWJ0TA2"></div><script src="//embed.typeform.com/next/embed.js"></script>
+      <div data-tf-live="01KWCA6TY1V0SVA1RCZSWJ0TA2" class="reveal delay-300"></div><script src="//embed.typeform.com/next/embed.js"></script>
       <!-- Button oberhalb der Card -->
-      <div class="flex flex-col items-center w-full max-w-2xl mb-8 gap-3 mt-6">
+      <div class="flex flex-col items-center w-full max-w-2xl mb-8 gap-3 mt-6 reveal delay-300">
         <p
           class="text-xs text-primary/70 text-center border border-primary/30 rounded-full px-4 py-1.5 mt-4"
         >
@@ -244,7 +264,7 @@
 
       <!-- Glassmorphism Bullet Card -->
       <div
-        class="glass-card p-6 md:p-12 rounded-2xl w-full max-w-2xl relative z-10 transition-all duration-500 hover:scale-[1.01]"
+        class="glass-card p-6 md:p-12 rounded-2xl w-full max-w-2xl relative z-10 transition-all duration-500 hover:scale-[1.01] reveal delay-400"
       >
         <p
           class="font-headline text-base font-semibold text-primary uppercase tracking-widest mb-8"
@@ -313,13 +333,13 @@
       </div>
       <div class="w-full max-w-2xl mt-16 space-y-4">
         <p
-          class="font-headline text-base font-semibold text-primary uppercase tracking-widest mb-6"
+          class="font-headline text-base font-semibold text-primary uppercase tracking-widest mb-6 reveal delay-500"
         >
           Häufige Fragen
         </p>
 
         <div
-          class="faq-item p-5 glass-card rounded-2xl border border-outline-variant/10"
+          class="faq-item p-5 glass-card rounded-2xl border border-outline-variant/10 reveal delay-500"
         >
           <button
             class="w-full text-base font-bold flex justify-between items-center cursor-pointer text-left outline-none"
@@ -344,7 +364,7 @@
         </div>
 
         <div
-          class="faq-item p-5 glass-card rounded-2xl border border-outline-variant/10"
+          class="faq-item p-5 glass-card rounded-2xl border border-outline-variant/10 reveal delay-600"
         >
           <button
             class="w-full text-base font-bold flex justify-between items-center cursor-pointer text-left outline-none"
@@ -368,7 +388,7 @@
         </div>
 
         <div
-          class="faq-item p-5 glass-card rounded-2xl border border-outline-variant/10"
+          class="faq-item p-5 glass-card rounded-2xl border border-outline-variant/10 reveal delay-700"
         >
           <button
             class="w-full text-base font-bold flex justify-between items-center cursor-pointer text-left outline-none"
@@ -391,7 +411,7 @@
         </div>
 
         <div
-          class="faq-item p-5 glass-card rounded-2xl border border-outline-variant/10"
+          class="faq-item p-5 glass-card rounded-2xl border border-outline-variant/10 reveal delay-800"
         >
           <button
             class="w-full text-base font-bold flex justify-between items-center cursor-pointer text-left outline-none"
@@ -511,6 +531,29 @@
           answer.style.maxHeight = answer.scrollHeight + "px";
         }
       }
+
+      // Reveal-Animationen beim Laden / Scrollen (wie auf der Hauptseite)
+      const revealObserverOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, revealObserverOptions);
+
+      document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          document.querySelectorAll('.reveal').forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+              el.classList.add('active');
+            }
+          });
+        }, 100);
+      });
     </script>
     <script>
       document.getElementById('typeform-button').addEventListener('click', function() {
