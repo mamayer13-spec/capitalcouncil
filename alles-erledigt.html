@@ -13,6 +13,27 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Alles erledigt | Capital Council</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#b9c7e2",
+                        "surface-container": "#142033",
+                        "on-background": "#d7e3fe",
+                        "surface": "#071326",
+                        "primary-container": "#1d64f2",
+                        "surface-tint": "#b3c5ff",
+                        "primary": "#b3c5ff",
+                        "on-primary": "#002a77",
+                        "surface-container-lowest": "#030e21"
+                    }
+                }
+            }
+        }
+    </script>
+    
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
     <style>
@@ -42,7 +63,16 @@
             background-size: 40px 40px;
             pointer-events: none;
         }
-
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
+                    rgba(29, 100, 242, 0.12),
+                    transparent 40%);
+            pointer-events: none;
+        }
         .glass-card {
             background: rgba(20, 32, 51, 0.4);
             backdrop-filter: blur(12px);
@@ -135,10 +165,10 @@
     </main>
 
     <script>
-        document.addEventListener('mousemove', (e) => {
-            document.documentElement.style.setProperty('--mouse-x', e.clientX + 'px');
-            document.documentElement.style.setProperty('--mouse-y', e.clientY + 'px');
-        });
+        window.addEventListener('mousemove', (e) => {
+            document.body.style.setProperty('--mouse-x', `${e.clientX}px`);
+            document.body.style.setProperty('--mouse-y', `${e.clientY}px`);
+        }, { passive: true });
 
         if (typeof gtag === 'function') {
             gtag('event', 'purchase', {
