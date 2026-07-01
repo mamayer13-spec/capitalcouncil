@@ -556,12 +556,20 @@
       });
     </script>
     <script>
-      document.getElementById('typeform-button').addEventListener('click', function() {
-        gtag('event', 'cta_click', {
-          event_category: 'engagement',
-          event_label: 'form_popup_open',
-        });
-        window.tf.createPopup('01KWCA6TY1V0SVA1RCZSWJ0TA2').open();
+      window.addEventListener('message', function (event) {
+        if (!event.data || typeof event.data !== 'object') return;
+        if (event.data.type === 'form-view' || event.data.type === 'form_view') {
+          gtag('event', 'form_start', {
+            event_category: 'engagement',
+            event_label: 'typeform_opened',
+          });
+        }
+        if (event.data.type === 'form-submit' || event.data.type === 'form_submit') {
+          gtag('event', 'form_submit', {
+            event_category: 'conversion',
+            event_label: 'typeform_completed',
+          });
+        }
       });
     </script>
   </body>
