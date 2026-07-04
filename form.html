@@ -159,6 +159,33 @@
         backdrop-filter: blur(20px);
         border: 1px solid rgba(179, 197, 255, 0.1);
       }
+      .testimonial-card {
+            border-radius: 0.75rem;
+            border: 1px solid rgba(179, 197, 255, 0.15);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 0 4px rgba(15, 28, 47, 0.6);
+            background: rgba(15, 28, 47, 0.6);
+            transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+        }
+        .testimonial-card:hover {
+            transform: rotate(0deg) scale(1.08) translateY(-6px) !important;
+            box-shadow: 0 16px 32px rgba(29, 100, 242, 0.25), 0 0 0 4px rgba(179, 197, 255, 0.2);
+        }
+
+        .video-embed {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: 1px solid rgba(179, 197, 255, 0.15);
+            box-shadow: 0 0 30px rgba(29, 100, 242, 0.1);
+        }
+        .video-embed iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: 0;
+        }
       /* Reveal-Animationen (wie auf der Hauptseite) */
       .reveal {
         opacity: 0;
@@ -250,6 +277,20 @@
         >
           Kostenlos · Keine Kreditkarte · Kein Abo
         </p>
+
+        <!-- Testimonial Collage -->
+        <div class="w-full max-w-3xl mx-auto mt-14 mb-4 reveal delay-300">
+          <div class="flex flex-wrap justify-center items-center px-4 sm:px-10">
+            <img src="testemonial1.png" alt="Testimonial" class="testimonial-card w-24 sm:w-32 md:w-36 -rotate-6 -mr-4 sm:-mr-6 z-[1] hover:z-20" />
+            <img src="testemonial2.png" alt="Testimonial" class="testimonial-card w-24 sm:w-32 md:w-36 rotate-4 -mr-4 sm:-mr-6 z-[2] hover:z-20 mt-6" />
+            <img src="testemonial3.png" alt="Testimonial" class="testimonial-card w-24 sm:w-32 md:w-36 -rotate-3 -mr-4 sm:-mr-6 z-[3] hover:z-20" />
+            <img src="testemonial4.PNG" alt="Testimonial" class="testimonial-card w-24 sm:w-32 md:w-36 rotate-5 -mr-4 sm:-mr-6 z-[4] hover:z-20 mt-8" />
+            <img src="testemonial5.PNG" alt="Testimonial" class="testimonial-card w-24 sm:w-32 md:w-36 -rotate-5 -mr-4 sm:-mr-6 z-[5] hover:z-20" />
+            <img src="testemonial6.PNG" alt="Testimonial" class="testimonial-card w-24 sm:w-32 md:w-36 rotate-3 -mr-4 sm:-mr-6 z-[6] hover:z-20 mt-5" />
+            <img src="testemonial7.PNG" alt="Testimonial" class="testimonial-card w-24 sm:w-32 md:w-36 -rotate-4 -mr-4 sm:-mr-6 z-[7] hover:z-20" />
+            <img src="testemonial8.PNG" alt="Testimonial" class="testimonial-card w-24 sm:w-32 md:w-36 rotate-6 z-[8] hover:z-20 mt-7" />
+          </div>
+        
         <p
           class="text-sm font-medium text-primary text-center px-5 py-2 rounded-full mt-6 mb-0"
           style="
