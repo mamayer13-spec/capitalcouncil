@@ -213,6 +213,32 @@
       .delay-600 { transition-delay: 600ms; }
       .delay-700 { transition-delay: 700ms; }
       .delay-800 { transition-delay: 800ms; }
+
+      :root {
+        --mouse-x: -100%;
+        --mouse-y: -100%;
+      }
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background-image:
+          linear-gradient(to right, rgba(29, 100, 242, 0.05) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(29, 100, 242, 0.05) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+      }
+      body::after {
+        content: '';
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
+                rgba(29, 100, 242, 0.12),
+                transparent 40%);
+        pointer-events: none;
+      }
     </style>
   </head>
   <body class="antialiased">
@@ -562,6 +588,8 @@
 
     <script>
       document.addEventListener("mousemove", (e) => {
+        document.body.style.setProperty('--mouse-x', `${e.clientX}px`);
+        document.body.style.setProperty('--mouse-y', `${e.clientY}px`);
         const cards = document.querySelectorAll(".glass-card");
         cards.forEach((card) => {
           const rect = card.getBoundingClientRect();
