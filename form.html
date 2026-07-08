@@ -186,6 +186,12 @@
             width: 100%; height: 100%;
             border: 0;
         }
+
+      .vsl-embed {
+            border: 1px solid rgba(179, 197, 255, 0.15);
+            box-shadow: 0 0 30px rgba(29, 100, 242, 0.15);
+        }
+      
       /* Reveal-Animationen (wie auf der Hauptseite) */
       .reveal {
         opacity: 0;
@@ -244,6 +250,26 @@
           <span class="text-xs sm:text-sm font-medium px-4 sm:px-5 py-1.5 sm:py-2 rounded-full border border-primary/50 text-primary">Komplett kostenlos</span>
         </div>
       </div>
+
+      <!-- VSL Video -->
+      <div class="w-full max-w-2xl mx-auto mb-8 reveal delay-250">
+        <div class="vsl-embed rounded-2xl overflow-hidden">
+          <div id="vidalytics_embed_4vncPZymLR10jG6X" style="width: 100%; position:relative; padding-top: 56.25%;"></div>
+        </div>
+      </div>
+      <script type="text/javascript">
+      (function (v, i, d, a, l, y, t, c, s) {
+          y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
+          if (!vsl){vsl=function(u,cb){
+              if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
+              if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState=="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
+              i.getElementsByTagName("head")[0].appendChild(s);
+          };}
+          vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
+      })(window, document, 'Vidalytics', 'vidalytics_embed_4vncPZymLR10jG6X', 'https://fast.vidalytics.com/embeds/8WlP4ITn/4vncPZymLR10jG6X/');
+      </script>
+
+      <div data-tf-live="01KWCA6TY1V0SVA1RCZSWJ0TA2" class="reveal delay-300"></div><script src="//embed.typeform.com/next/embed.js"></script>
 
       <div data-tf-live="01KWCA6TY1V0SVA1RCZSWJ0TA2" class="reveal delay-300"></div><script src="//embed.typeform.com/next/embed.js"></script>
       <!-- Button oberhalb der Card -->
